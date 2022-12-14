@@ -3,6 +3,7 @@
 
 # A mode that starts running when attract mode is started.
 # It starts a timer that count to 10, then set computer time to machine variable named "time_variable", timer then starts over.
+# Follow my Pokémon Pinball project at Pinside, user Gillen. :)
 
 mode:
   start_events: mode_attract_started
