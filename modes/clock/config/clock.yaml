@@ -1,0 +1,35 @@
+#config_version=5
+
+
+# A mode that starts running when attract mode is started.
+# It starts a timer that count to 10, then set computer time to machine variable named "time_variable", timer then starts over.
+
+mode:
+  start_events: mode_attract_started
+  priority: 100
+  game_mode: false
+  code: clock.GetClock
+
+
+timers:
+    set_clock_time:
+        debug: false
+        bcp: false
+        start_value: 0
+        end_value: 10
+        direction: up
+        tick_interval: 1s
+        start_running: yes
+        restart_on_complete: yes
+        control_events:
+          - action: start
+            event: mode_clock_started
+
+machine_vars:
+    time_variable:
+        value_type: str
+        initial_value: banan
+        persist: true            
+
+event_player:
+    timer_set_clock_time_complete: set_clock
