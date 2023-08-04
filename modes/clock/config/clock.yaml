@@ -37,5 +37,6 @@ machine_vars:
         persist: true          
 
 event_player:
-    time_variable_saved: set_date
+    time_variable_saved: set_date #Set the date when time_variable is written.
     timer_set_clock_time_complete: set_clock
+    mode_clock_started: set_clock #At start of mode so it doesn't take 10 seconds (timers time) to set clock and date.
